@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"vlary.coding.net","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Apache日志位置​    在linux系统中，apache也就是apache2，默认的位置是在&#x2F;var&#x2F;log&#x2F;apache2目录下，错误日志为error.log，访问日志一般带有access.log。 访问日志分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="服务器日志分析">
+<meta property="og:url" content="https://vlary.coding.net/2020/05/21/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/index.html">
+<meta property="og:site_name" content="Vlary&#39;s Blog">
+<meta property="og:description" content="Apache日志位置​    在linux系统中，apache也就是apache2，默认的位置是在&#x2F;var&#x2F;log&#x2F;apache2目录下，错误日志为error.log，访问日志一般带有access.log。 访问日志分析">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-21T08:48:36.000Z">
+<meta property="article:modified_time" content="2020-05-21T08:52:23.476Z">
+<meta property="article:author" content="Vlary">
+<meta property="article:tag" content="其他">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://vlary.coding.net/2020/05/21/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>服务器日志分析 | Vlary's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Vlary's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vlary.coding.net/2020/05/21/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Vlary">
+      <meta itemprop="description" content="Winner Winner, Chicken Dinner">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vlary's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          服务器日志分析
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-21 16:48:36 / 修改时间：16:52:23" itemprop="dateCreated datePublished" datetime="2020-05-21T16:48:36+08:00">2020-05-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><h3 id="日志位置"><a href="#日志位置" class="headerlink" title="日志位置"></a>日志位置</h3><p>​    在linux系统中，apache也就是apache2，默认的位置是在/var/log/apache2目录下，错误日志为error.log，访问日志一般带有access.log。</p>
+<h3 id="访问日志分析"><a href="#访问日志分析" class="headerlink" title="访问日志分析"></a>访问日志分析</h3><a id="more"></a>
+
+<p>日志示例</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.168.1.20 - - [22&#x2F;Apr&#x2F;2020:15:27:49 +0800] &quot;GET &#x2F;1&#x2F;index.php HTTP&#x2F;1.1&quot; 404 490 &quot;-&quot; &quot;Mozilla&#x2F;5.0 (Windows NT 6.1; Win64; x64; rv:45.0) Gecko&#x2F;20100101 Firefox&#x2F;45.0&quot;</span><br></pre></td></tr></table></figure>
+
+<p>依次各字段的含义为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">远端主机名+客户端日志名称（可空）+客户端用户名（可空）+服务器时间+请求内容（方法名、地址和http协议）+响应的http状态码的最终结果+服务器发送的字节数+来源页+客户端信息</span><br></pre></td></tr></table></figure>
+
+<p>​    apache的日志格式也可以去自定义，所在的配置文件在/etc/apache2/apache2.conf文件里的，可以使用vim打开，然后/Logformat进行查找，一般有下面五种格式，当然也可以根据自己的需要进行修改。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">LogFormat &quot;%v:%p %h %l %u %t \&quot;%r\&quot; %&gt;s %O \&quot;%&#123;Referer&#125;i\&quot; \&quot;%&#123;User-Agent&#125;i\&quot;&quot; vhost_combined</span><br><span class="line">LogFormat &quot;%h %l %u %t \&quot;%r\&quot; %&gt;s %O \&quot;%&#123;Referer&#125;i\&quot; \&quot;%&#123;User-Agent&#125;i\&quot;&quot; combined</span><br><span class="line">LogFormat &quot;%h %l %u %t \&quot;%r\&quot; %&gt;s %O&quot; common</span><br><span class="line">LogFormat &quot;%&#123;Referer&#125;i -&gt; %U&quot; referer</span><br><span class="line">LogFormat &quot;%&#123;User-agent&#125;i&quot; agent</span><br></pre></td></tr></table></figure>
+
+<p>具体的参数说明请参考阿里云<a href="https://help.aliyun.com/document_detail/28987.html" target="_blank" rel="noopener">Apache 日志</a>文档，此次我的例子使用的是默认的combined格式。</p>
+<p>window下日志的目录在apache安装目录的logs下。</p>
+<h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><h3 id="日志位置-1"><a href="#日志位置-1" class="headerlink" title="日志位置"></a>日志位置</h3><p>​    Nginx的配置文件的路径是/etc/nginx/nginx.conf，在配置文件中搜索access_log可找到日志的默认路径，一般为/var/logs/nginx目录下，访问日志名称为access.log。</p>
+<h3 id="访问日志分析-1"><a href="#访问日志分析-1" class="headerlink" title="访问日志分析"></a>访问日志分析</h3><p>日志示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.168.1.220 - - [10&#x2F;Jul&#x2F;2020:15:51:09 +0800] &quot;GET &#x2F;ubuntu.iso HTTP&#x2F;1.0&quot; 0.000 129 404 168 &quot;-&quot; &quot;Wget&#x2F;1.11.4 Red Hat modified&quot;</span><br></pre></td></tr></table></figure>
+
+<p>各字段的含义依次为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">客户端ip地址 + - +客户端用户名称（可空）+通用日志格式下的本地时间 + 请求的URL和HTTP协议 + 请求处理时间 + 请求的长度 + 请求状态 + 发送给客户端的字节数（不包括响应头大小）+ 源页面 + 客户端信息</span><br></pre></td></tr></table></figure>
+
+<p>​    当然，nginx的日志格式也是可以进行定义的，也是在配置文件中进行配置，打开配置文件后搜索log_format就能找到日志格式的定义。例子中的格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">log_format main  &#39;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#39;</span><br><span class="line">                 &#39;$request_time $request_length &#39;</span><br><span class="line">                 &#39;$status $body_bytes_sent &quot;$http_referer&quot; &#39;</span><br><span class="line">                 &#39;&quot;$http_user_agent&quot;&#39;;</span><br></pre></td></tr></table></figure>
+
+<p>参考自阿里云<a href="https://help.aliyun.com/document_detail/28988.html?spm=a2c4g.11186623.4.3.2073452aybxRHz#title-3sa-zvu-9z4" target="_blank" rel="noopener">Nginx日志</a>文档,其他字段的名称及含义也可以进行查询。</p>
+<p>windows下Nginx日志默认在Nginx安装目录下的logs下。</p>
+<h2 id="IIS"><a href="#IIS" class="headerlink" title="IIS"></a>IIS</h2><h3 id="日志位置-2"><a href="#日志位置-2" class="headerlink" title="日志位置"></a>日志位置</h3><p>​    IIS的日志位置与IIS的版本号的不同也有不同，相关配置文件的位置也有不同。</p>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>日志位置</th>
+<th>配置文件位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IIS6</td>
+<td>C:\Windows\System32\LogFiles</td>
+<td>C:\WINDOWS\system32\inetsrv\MetaBase.xml</td>
+</tr>
+<tr>
+<td>IIS7</td>
+<td>C:\inetpub\logs\LogFiles</td>
+<td>C:\Windows\System32\inetsrv\config\applicationHost.config</td>
+</tr>
+</tbody></table>
+<p>由于手头没有IIS服务器，所以无法进行验证，如有错误请联系修改。</p>
+<h3 id="日志字段"><a href="#日志字段" class="headerlink" title="日志字段"></a>日志字段</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#Software: Microsoft Internet Information Services 7.5</span><br><span class="line">#Version: 1.0</span><br><span class="line">#Date: 2013-08-21 01:00:00</span><br><span class="line">#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken</span><br></pre></td></tr></table></figure>
+
+<p>date：表示记录访问日期；<br>time：访问时间；<br>s-sitename：客户端所访问的该站点的 Internet 服务和实例的号码。<br>s-ip：服务器ip<br>cs-method：表示访问方法，常见的有两种，一是GET，就是平常我们打开一个URL访问的动作，二是POST，提交表单时的动作；<br>cs-uri-stem： 就是访问哪一个文件；<br>cs-uri-query：是指访问地址的附带参数，如asp文件?后面的字符串id=12等等，如果没有参数则用-表示；<br>s-port：访问的端口<br>cs-username：对于通过身份验证的用户，格式是“域\用户名”；对于匿名用户，是一个连字符 (-)。<br>c-ip：访问服务器的客户端 IP 地址。（已过滤掉中间各种IP，是真实的客户端IP）<br>cs(User-Agent)：在客户端使用的浏览器。<br>sc-status：状态，200表示成功，403表示没有权限，404表示打不到该页面，500表示程序有错；<br>sc-substatus：跟数据缓存有关<br>cs–win32-statu： 客户端传送到服务端的字节大小；<br>time-taken: 处理所用的时间 ，单位毫秒</p>
+<p>注：IIS日志位置未进行验证，配置文件位置参考自阿里云<a href="https://help.aliyun.com/document_detail/137905.html?spm=a2c4g.11186623.6.610.206b319a0JVJsy" target="_blank" rel="noopener">IIS日志</a>文档。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%85%B6%E4%BB%96/" rel="tag"># 其他</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/20/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Apache"><span class="nav-number">1.</span> <span class="nav-text">Apache</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#日志位置"><span class="nav-number">1.1.</span> <span class="nav-text">日志位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问日志分析"><span class="nav-number">1.2.</span> <span class="nav-text">访问日志分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx"><span class="nav-number">2.</span> <span class="nav-text">Nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#日志位置-1"><span class="nav-number">2.1.</span> <span class="nav-text">日志位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问日志分析-1"><span class="nav-number">2.2.</span> <span class="nav-text">访问日志分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IIS"><span class="nav-number">3.</span> <span class="nav-text">IIS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#日志位置-2"><span class="nav-number">3.1.</span> <span class="nav-text">日志位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日志字段"><span class="nav-number">3.2.</span> <span class="nav-text">日志字段</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Vlary"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Vlary</p>
+  <div class="site-description" itemprop="description">Winner Winner, Chicken Dinner</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vlary</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
