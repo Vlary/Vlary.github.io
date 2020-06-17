@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://vlary.coding.net/"/>
-  <updated>2020-06-17T12:24:52.345Z</updated>
+  <updated>2020-06-17T12:30:06.025Z</updated>
   <id>https://vlary.coding.net/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://vlary.coding.net/2020/06/17/shu-mei-pai-ubuntu-server19-01/"/>
     <id>https://vlary.coding.net/2020/06/17/shu-mei-pai-ubuntu-server19-01/</id>
     <published>2020-06-17T12:17:45.000Z</published>
-    <updated>2020-06-17T12:24:52.345Z</updated>
+    <updated>2020-06-17T12:30:06.025Z</updated>
     
     <summary type="html">
     
@@ -42,6 +42,8 @@ wifis:
     
       <category term="树莓派" scheme="https://vlary.coding.net/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
     
+      <category term="Linux" scheme="https://vlary.coding.net/tags/Linux/"/>
+    
   </entry>
   
   <entry>
@@ -49,7 +51,7 @@ wifis:
     <link href="https://vlary.coding.net/2020/05/22/fu-wu-qi-ri-zhi-fen-xi/"/>
     <id>https://vlary.coding.net/2020/05/22/fu-wu-qi-ri-zhi-fen-xi/</id>
     <published>2020-05-22T02:37:05.000Z</published>
-    <updated>2020-06-17T12:24:25.809Z</updated>
+    <updated>2020-06-17T12:31:08.212Z</updated>
     
     <summary type="html">
     
@@ -66,6 +68,8 @@ wifis:
     
     
       <category term="其他" scheme="https://vlary.coding.net/tags/%E5%85%B6%E4%BB%96/"/>
+    
+      <category term="日志" scheme="https://vlary.coding.net/tags/%E6%97%A5%E5%BF%97/"/>
     
   </entry>
   
