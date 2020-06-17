@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://vlary.coding.net/"/>
-  <updated>2020-05-22T03:28:44.162Z</updated>
+  <updated>2020-06-17T12:17:45.452Z</updated>
   <id>https://vlary.coding.net/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>树莓派Ubuntu Server19.01</title>
+    <link href="https://vlary.coding.net/2020/06/17/shu-mei-pai-ubuntu-server19-01/"/>
+    <id>https://vlary.coding.net/2020/06/17/shu-mei-pai-ubuntu-server19-01/</id>
+    <published>2020-06-17T12:17:45.000Z</published>
+    <updated>2020-06-17T12:17:45.452Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>服务器日志分析</title>
