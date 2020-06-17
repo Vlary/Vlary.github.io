@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://vlary.coding.net/"/>
-  <updated>2020-06-17T12:21:13.792Z</updated>
+  <updated>2020-06-17T12:24:52.345Z</updated>
   <id>https://vlary.coding.net/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://vlary.coding.net/2020/06/17/shu-mei-pai-ubuntu-server19-01/"/>
     <id>https://vlary.coding.net/2020/06/17/shu-mei-pai-ubuntu-server19-01/</id>
     <published>2020-06-17T12:17:45.000Z</published>
-    <updated>2020-06-17T12:21:13.792Z</updated>
+    <updated>2020-06-17T12:24:52.345Z</updated>
     
     <summary type="html">
     
@@ -49,7 +49,7 @@ wifis:
     <link href="https://vlary.coding.net/2020/05/22/fu-wu-qi-ri-zhi-fen-xi/"/>
     <id>https://vlary.coding.net/2020/05/22/fu-wu-qi-ri-zhi-fen-xi/</id>
     <published>2020-05-22T02:37:05.000Z</published>
-    <updated>2020-05-22T03:28:44.162Z</updated>
+    <updated>2020-06-17T12:24:25.809Z</updated>
     
     <summary type="html">
     
@@ -65,14 +65,16 @@ wifis:
     
     
     
+      <category term="其他" scheme="https://vlary.coding.net/tags/%E5%85%B6%E4%BB%96/"/>
+    
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://vlary.coding.net/2020/05/20/hello-world/"/>
-    <id>https://vlary.coding.net/2020/05/20/hello-world/</id>
-    <published>2020-05-20T13:11:54.328Z</published>
-    <updated>2020-05-21T12:30:32.786Z</updated>
+    <link href="https://vlary.coding.net/1899/11/30/hello-world/"/>
+    <id>https://vlary.coding.net/1899/11/30/hello-world/</id>
+    <published>1899-11-29T16:00:00.000Z</published>
+    <updated>2020-06-17T12:27:01.365Z</updated>
     
     <summary type="html">
     
@@ -87,6 +89,8 @@ wifis:
     </summary>
     
     
+    
+      <category term="测试" scheme="https://vlary.coding.net/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   

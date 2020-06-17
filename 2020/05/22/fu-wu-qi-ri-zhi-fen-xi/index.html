@@ -367,9 +367,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%85%B6%E4%BB%96/">
+                                <span class="chip bg-color">其他</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -388,7 +392,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-22
+                    2020-06-17
                 </div>
                 
 
@@ -435,14 +439,14 @@ LogFormat <span class="token string">"%{User-agent}i"</span> agent<span aria-hid
 <pre class="line-numbers language-bash"><code class="language-bash">192.168.1.220 - - <span class="token punctuation">[</span>10/Jul/2020:15:51:09 +0800<span class="token punctuation">]</span> <span class="token string">"GET /ubuntu.iso HTTP/1.0"</span> 0.000 129 404 168 <span class="token string">"-"</span> <span class="token string">"Wget/1.11.4 Red Hat modified"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>各字段的含义依次为：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">客户端ip地址 + - +客户端用户名称（可空）+通用日志格式下的本地时间 + 请求的URL和HTTP协议 + 请求处理时间 + 请求的长度 + 请求状态 + 发送给客户端的字节数（不包括响应头大小）+ 源页面 + 客户端信息<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>​    当然，nginx的日志格式也是可以进行定义的，也是在配置文件中进行配置，打开配置文件后搜索log_format就能找到日志格式的定义。例子中的格式如下：</p>
+<p>​ 当然，nginx的日志格式也是可以进行定义的，也是在配置文件中进行配置，打开配置文件后搜索log_format就能找到日志格式的定义。例子中的格式如下：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">log_format main  <span class="token string">'<span class="token variable">$remote_addr</span> - <span class="token variable">$remote_user</span> [<span class="token variable">$time_local</span>] "<span class="token variable">$request</span>" '</span>
                  <span class="token string">'<span class="token variable">$request_time</span> <span class="token variable">$request_length</span> '</span>
                  <span class="token string">'<span class="token variable">$status</span> <span class="token variable">$body_bytes_sent</span> "<span class="token variable">$http_referer</span>" '</span>
                  <span class="token string">'"<span class="token variable">$http_user_agent</span>"'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>参考自阿里云<a href="https://help.aliyun.com/document_detail/28988.html?spm=a2c4g.11186623.4.3.2073452aybxRHz#title-3sa-zvu-9z4" target="_blank" rel="noopener">Nginx日志</a>文档,其他字段的名称及含义也可以进行查询。</p>
 <p>windows下Nginx日志默认在Nginx安装目录下的logs下。</p>
-<h2 id="IIS"><a href="#IIS" class="headerlink" title="IIS"></a>IIS</h2><h3 id="日志位置-2"><a href="#日志位置-2" class="headerlink" title="日志位置"></a>日志位置</h3><p>​    IIS的日志位置与IIS的版本号的不同也有不同，相关配置文件的位置也有不同。</p>
+<h2 id="IIS"><a href="#IIS" class="headerlink" title="IIS"></a>IIS</h2><h3 id="日志位置-2"><a href="#日志位置-2" class="headerlink" title="日志位置"></a>日志位置</h3><p>​ IIS的日志位置与IIS的版本号的不同也有不同，相关配置文件的位置也有不同。</p>
 <table>
 <thead>
 <tr>
@@ -531,7 +535,11 @@ LogFormat <span class="token string">"%{User-agent}i"</span> agent<span aria-hid
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E5%85%B6%E4%BB%96/">
+                                    <span class="chip bg-color">其他</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -886,7 +894,7 @@ wifis:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/20/hello-world/">
+                <a href="/1899/11/30/hello-world/">
                     <div class="card-image">
                         
                         
@@ -903,7 +911,7 @@ wifis:
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-20
+                                <i class="far fa-clock fa-fw icon-date"></i>1899-11-30
                             </span>
                         <span class="publish-author">
                             
@@ -912,6 +920,14 @@ wifis:
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%B5%8B%E8%AF%95/">
+                        <span class="chip bg-color">测试</span>
+                    </a>
+                    
                 </div>
                 
             </div>
