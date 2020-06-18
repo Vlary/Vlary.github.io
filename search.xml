@@ -8,7 +8,7 @@
       <link href="/2020/06/18/hexo-zhong-valine-bao-cuo/"/>
       <url>/2020/06/18/hexo-zhong-valine-bao-cuo/</url>
       
-        <content type="html"><![CDATA[<p>在Hexo中使用Valine评论系统时，在评论区之后出现</p><pre class="line-numbers language-php"><code class="language-php">Code <span class="token number">403</span><span class="token punctuation">:</span> 访问被api域名白名单拒绝<span class="token punctuation">,</span>请检查你的安全域名设置<span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>解决方法：</p><p>登录leancloud(<a href="https://leancloud.cn)打开设置进入安全中心，将所使用的域名添加到Web" target="_blank" rel="noopener">https://leancloud.cn)打开设置进入安全中心，将所使用的域名添加到Web</a> 安全域名中去就OK啦！示例如下。<br><img src="https://gitee.com/Vlary/blogimage/raw/master/img/20200618180803.png" alt=""></p>]]></content>
+        <content type="html"><![CDATA[<p>在Hexo中使用Valine评论系统时，在评论区之后出现</p><pre><code>Code 403: 访问被api域名白名单拒绝,请检查你的安全域名设置.</code></pre><p>解决方法：</p><p>登录leancloud(<a href="https://leancloud.cn)打开设置进入安全中心，将所使用的域名添加到Web" target="_blank" rel="noopener">https://leancloud.cn)打开设置进入安全中心，将所使用的域名添加到Web</a> 安全域名中去就OK啦！示例如下。<br><img src="https://gitee.com/Vlary/blogimage/raw/master/img/20200618180803.png" alt=""></p>]]></content>
       
       
       <categories>
