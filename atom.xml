@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://vlary.coding.net/"/>
-  <updated>2020-06-18T03:26:45.022Z</updated>
+  <updated>2020-06-18T10:08:49.595Z</updated>
   <id>https://vlary.coding.net/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo中Valine报错</title>
+    <link href="https://vlary.coding.net/2020/06/18/hexo-zhong-valine-bao-cuo/"/>
+    <id>https://vlary.coding.net/2020/06/18/hexo-zhong-valine-bao-cuo/</id>
+    <published>2020-06-18T10:00:01.000Z</published>
+    <updated>2020-06-18T10:08:49.595Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在Hexo中使用Valine评论系统时，在评论区之后出现&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-php&quot;&gt;&lt;code class=&quot;language-php&quot;&gt;Code &lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+    
+      <category term="其他" scheme="https://vlary.coding.net/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="其他" scheme="https://vlary.coding.net/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
   
   <entry>
     <title>AS之HelloWorld</title>
