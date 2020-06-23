@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.vlary.cn/1899/11/30/hello-world/</loc>
+    
+    <lastmod>2020-06-23T06:26:30.466Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.vlary.cn/2020/06/18/hexo-zhong-valine-bao-cuo/</loc>
     
     <lastmod>2020-06-18T10:26:43.918Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://www.vlary.cn/2020/06/17/as-zhi-helloworld/</loc>
     
     <lastmod>2020-06-18T03:26:45.022Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.vlary.cn/1899/11/30/hello-world/</loc>
-    
-    <lastmod>2020-06-18T03:25:33.702Z</lastmod>
     
   </url>
   
