@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.vlary.cn/friends/index.html</loc>
+    
+    <lastmod>2020-06-26T02:58:03.570Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.vlary.cn/404.html</loc>
     
     <lastmod>2020-06-23T06:35:04.423Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>https://www.vlary.cn/contact/index.html</loc>
     
     <lastmod>2020-05-22T06:44:27.812Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.vlary.cn/friends/index.html</loc>
-    
-    <lastmod>2020-05-22T03:14:57.415Z</lastmod>
     
   </url>
   
