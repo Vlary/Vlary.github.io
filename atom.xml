@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.vlary.cn/"/>
-  <updated>2020-06-27T09:23:11.888Z</updated>
+  <updated>2020-06-27T09:34:25.692Z</updated>
   <id>https://www.vlary.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>manjaro docker安装配置</title>
-    <link href="https://www.vlary.cn/archives/e4764dc7.html"/>
-    <id>https://www.vlary.cn/archives/e4764dc7.html</id>
-    <published>2020-06-27T08:56:01.000Z</published>
-    <updated>2020-06-27T09:23:11.888Z</updated>
+    <title>初识CDN</title>
+    <link href="https://www.vlary.cn/archives/2f96f4d9.html"/>
+    <id>https://www.vlary.cn/archives/2f96f4d9.html</id>
+    <published>2020-06-27T09:32:19.000Z</published>
+    <updated>2020-06-27T09:34:25.692Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,36 @@
       
         
         
-          &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;hr&gt;
+          &lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+         
+        
+      
+    
+    </summary>
+    
+    
+      <category term="其他" scheme="https://www.vlary.cn/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="其他" scheme="https://www.vlary.cn/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>manjaro docker安装配置</title>
+    <link href="https://www.vlary.cn/archives/e4764dc7.html"/>
+    <id>https://www.vlary.cn/archives/e4764dc7.html</id>
+    <published>2020-06-27T08:56:01.000Z</published>
+    <updated>2020-06-27T09:35:34.598Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;hr&gt;
 &lt;pre class=&quot;line-numbers language-bash&quot;&gt;&lt;code
         
       
