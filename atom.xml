@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.vlary.cn/"/>
-  <updated>2020-06-18T10:26:43.918Z</updated>
+  <updated>2020-06-27T04:17:58.350Z</updated>
   <id>https://www.vlary.cn/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Hexo中Valine报错</title>
-    <link href="https://www.vlary.cn/2020/06/18/hexo-zhong-valine-bao-cuo/"/>
-    <id>https://www.vlary.cn/2020/06/18/hexo-zhong-valine-bao-cuo/</id>
+    <link href="https://www.vlary.cn/archives/7f451376.html"/>
+    <id>https://www.vlary.cn/archives/7f451376.html</id>
     <published>2020-06-18T10:00:01.000Z</published>
-    <updated>2020-06-18T10:26:43.918Z</updated>
+    <updated>2020-06-27T04:17:58.350Z</updated>
     
     <summary type="html">
     
@@ -47,10 +47,10 @@
   
   <entry>
     <title>AS之HelloWorld</title>
-    <link href="https://www.vlary.cn/2020/06/17/as-zhi-helloworld/"/>
-    <id>https://www.vlary.cn/2020/06/17/as-zhi-helloworld/</id>
+    <link href="https://www.vlary.cn/archives/b8e36d4a.html"/>
+    <id>https://www.vlary.cn/archives/b8e36d4a.html</id>
     <published>2020-06-17T12:36:06.000Z</published>
-    <updated>2020-06-26T11:13:53.182Z</updated>
+    <updated>2020-06-27T04:17:58.346Z</updated>
     
     <summary type="html">
     
@@ -77,10 +77,10 @@
   
   <entry>
     <title>树莓派Ubuntu Server19.01</title>
-    <link href="https://www.vlary.cn/2020/06/17/shu-mei-pai-ubuntu-server19-01/"/>
-    <id>https://www.vlary.cn/2020/06/17/shu-mei-pai-ubuntu-server19-01/</id>
+    <link href="https://www.vlary.cn/archives/570a35fe.html"/>
+    <id>https://www.vlary.cn/archives/570a35fe.html</id>
     <published>2020-06-17T12:17:45.000Z</published>
-    <updated>2020-06-18T03:26:51.238Z</updated>
+    <updated>2020-06-27T04:17:58.350Z</updated>
     
     <summary type="html">
     
@@ -109,10 +109,10 @@ wifis:
   
   <entry>
     <title>服务器日志分析</title>
-    <link href="https://www.vlary.cn/2020/05/22/fu-wu-qi-ri-zhi-fen-xi/"/>
-    <id>https://www.vlary.cn/2020/05/22/fu-wu-qi-ri-zhi-fen-xi/</id>
+    <link href="https://www.vlary.cn/archives/1e14a657.html"/>
+    <id>https://www.vlary.cn/archives/1e14a657.html</id>
     <published>2020-05-22T02:37:05.000Z</published>
-    <updated>2020-06-18T03:27:00.568Z</updated>
+    <updated>2020-06-27T04:17:58.350Z</updated>
     
     <summary type="html">
     
@@ -138,10 +138,10 @@ wifis:
   
   <entry>
     <title>Hello World</title>
-    <link href="https://www.vlary.cn/1899/11/30/hello-world/"/>
-    <id>https://www.vlary.cn/1899/11/30/hello-world/</id>
-    <published>1899-11-29T16:00:00.000Z</published>
-    <updated>2020-06-23T06:26:30.466Z</updated>
+    <link href="https://www.vlary.cn/archives/4a17b156.html"/>
+    <id>https://www.vlary.cn/archives/4a17b156.html</id>
+    <published>1899-11-29T16:00:43.000Z</published>
+    <updated>2020-06-27T04:17:58.350Z</updated>
     
     <summary type="html">
     
