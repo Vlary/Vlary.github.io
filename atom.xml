@@ -49,7 +49,7 @@
     <link href="https://www.vlary.cn/archives/e4764dc7.html"/>
     <id>https://www.vlary.cn/archives/e4764dc7.html</id>
     <published>2020-06-27T08:56:01.000Z</published>
-    <updated>2020-06-27T09:46:35.122Z</updated>
+    <updated>2020-06-29T08:22:27.071Z</updated>
     
     <summary type="html">
     
@@ -138,7 +138,7 @@
     <link href="https://www.vlary.cn/archives/570a35fe.html"/>
     <id>https://www.vlary.cn/archives/570a35fe.html</id>
     <published>2020-06-17T12:17:45.000Z</published>
-    <updated>2020-06-27T04:17:58.350Z</updated>
+    <updated>2020-06-29T08:22:29.631Z</updated>
     
     <summary type="html">
     
@@ -147,7 +147,7 @@
         
         
           &lt;p&gt;1.连接wifi，在Ubuntu Server中使用netplan连接&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# sudo vim /etc/netplan/50-cloud-init.yaml //末尾添加，注意缩进使用空格，wifis:前有缩进
+&lt;pre&gt;&lt;code&gt;$ sudo vim /etc/netplan/50-cloud-init.yaml //末尾添加，注意缩进使用空格，wifis:前有缩进
 wifis:
    
         
