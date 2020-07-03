@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /about/
 Allow: /archives/
+Disallow: /about/
 Disallow: /js/
 Disallow: /css/
 Disallow: /contact/
