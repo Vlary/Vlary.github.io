@@ -10,4 +10,3 @@ Disallow: /libs/
 Disallow: /medias/
 Disallow: /tags/
 Disallow: /categories/
-Disallow: /404/
