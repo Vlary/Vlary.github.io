@@ -13,3 +13,4 @@ Disallow: /categories/
 Disallow: /archives/1899/
 Disallow: /archives/2020/
 Disallow: /archives/page/
+Disallow: /archives/index.html
