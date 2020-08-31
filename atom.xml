@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.vlary.cn/"/>
-  <updated>2020-07-05T11:29:03.954Z</updated>
+  <updated>2020-07-07T03:40:56.501Z</updated>
   <id>https://www.vlary.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux下electron打包为可执行文件</title>
+    <link href="https://www.vlary.cn/archives/5a9ad7c8.html"/>
+    <id>https://www.vlary.cn/archives/5a9ad7c8.html</id>
+    <published>2020-07-07T03:38:31.000Z</published>
+    <updated>2020-07-07T03:40:56.501Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre class=&quot;line-numbers language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://www.vlary.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="https://www.vlary.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>初识CDN</title>

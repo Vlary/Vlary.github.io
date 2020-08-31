@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Linux下electron打包为可执行文件</title>
+      <link href="/archives/5a9ad7c8.html"/>
+      <url>/archives/5a9ad7c8.html</url>
+      
+        <content type="html"><![CDATA[<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span>$ <span class="token function">npm</span> start$ <span class="token function">npm</span> <span class="token function">install</span> electron-builder --save$ <span class="token function">npm</span> run dist<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>初识CDN</title>
       <link href="/archives/2f96f4d9.html"/>
       <url>/archives/2f96f4d9.html</url>
